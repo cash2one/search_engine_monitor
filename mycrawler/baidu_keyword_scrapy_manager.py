@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 import pdb
 import logging
 import subprocess
-from optparse import OptionParser
 
 sys.path.append('/home/yangrq/projects/pycore')
 from db.mysqlv6 import MySQLOperator
@@ -45,6 +44,6 @@ class SeoCoreKeywordManager(CommonHandler, DaemonUtil):
         self.do_run()
 
 if __name__ == '__main__':
-    btlog_init("log_baidu_keyword_scrapy_manager.log", logfile=True, console=False)
+    btlog_init("log_baidu_keyword_scrapy_manager.log", logfile=True, console=True)
     t = SeoCoreKeywordManager()
     t.run()
