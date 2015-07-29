@@ -243,6 +243,10 @@ class ParserBroker(CommonHandler, HttpClient):
         return div_result_list
 
     def test_parse(self, p=False):
+        keyword = '代理服务器'
+        url = "http://www.baidu.com/s?ie=utf-8&mod=0&isid=F3B6D39EEF328045&pstg=0&wd=%s&ie=utf-8&tn=baiduhome_pg&f=8&rn=20" % urllib.quote_plus(keyword)
+        print url
+        urllib.urlretrieve(url, self.TEST_FILE)
         html_data = self.LoadFile(self.TEST_FILE)
         lst   = self.parse(html_data)
         for d in lst:
@@ -250,14 +254,7 @@ class ParserBroker(CommonHandler, HttpClient):
                 print x,y
             print ''
 
-    def fetch_file(self):
-        keyword = '长沙机票'
-        keyword = '12306余票查询'
-        url = "http://www.baidu.com/s?ie=utf-8&mod=0&isid=F3B6D39EEF328045&pstg=0&wd=%s&ie=utf-8&tn=baiduhome_pg&f=8&rn=20" % urllib.quote_plus(keyword)
-        print url
-        urllib.urlretrieve(url, self.TEST_FILE)
 
 if __name__ == '__main__':
     b   = ParserBroker()
-    b.fetch_file()
     b.test_parse(True)

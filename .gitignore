@@ -1,0 +1,10 @@
+scrapy_prj/run.sh
+*.bak
+*pyc
+*swp
+*.log
+*.log.*
+*.txt
+*.html
+.pid.*
+run_*sh

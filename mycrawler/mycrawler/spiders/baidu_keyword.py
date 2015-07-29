@@ -25,9 +25,7 @@ class KeywordSpider(BaseSpider, CommonHandler):
             raise Exception, 'please provide task_date'
 
         self.kxdebug    = kxdebug
-        self.url_format = "http://www.baidu.com/#wd=%s&rsv_spt=1&issp=1&rsv_bp=0&ie=utf-8&tn=baiduhome_pg&inputT=7&rn=100"
-        self.url_format = "http://www.baidu.com/s?ie=utf-8&mod=0&isid=F3B6D39EEF328045&pstg=0&wd=%s&ie=utf-8&tn=baiduhome_pg&rn=100"
-
+        self.url_format = "http://www.baidu.com/s?ie=utf-8&mod=0&isid=F3B6D39EEF328045&pstg=0&wd=%s&ie=utf-8&tn=baiduhome_pg&rn=50"
 
     def start_requests(self):
         self.db_conn = MySQLOperator()
